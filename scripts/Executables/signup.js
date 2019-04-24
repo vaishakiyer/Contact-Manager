@@ -3,7 +3,7 @@ var newPassword = document.querySelector('#newPassword');
 var confirmNewPassword = document.querySelector('#confirmNewPassword');
 var signUpButton = document.querySelector('#signUpButton');
 var newName=document.querySelector('#newName');
-var users = [];
+//var users = [];
 
 signUpButton.onclick = function registerUser(){
     
@@ -14,7 +14,19 @@ signUpButton.onclick = function registerUser(){
     }
     
     else{
-    let myUser =  new User(idGenerator,newName.value,newEmailAdress.value,newPassword.value)
+        console.log(idGenerator());
+    let myUser =  new User(idGenerator(),newName.value,newEmailAdress.value,newPassword.value)
     appendDataToLocalStorageKey('users',myUser,false) 
 }
+}
+function idGenerator(){
+  let users = fetchAllUsers();
+    console.log(users);
+    if (users === null){
+        return 1;
+    }else{
+        let count = users[users.length - 1].id;
+        return ++count;
+    }
+   
 }

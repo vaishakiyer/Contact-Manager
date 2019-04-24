@@ -59,17 +59,12 @@ userLoginButton.onclick = function loginPressed(){
 }
 
 adminLoginButton.onclick= function adminLogin(){
-   
+    console.log(adminPassword.value);
+   if(adminPassword.value==="admin"){
+    window.location.href = '../../Contact-Manager/html/admin.html';
+   }
 }
 
-function idGenerator(){
-    if  (users[users.length - 1].id === null){
-        return 1;
-    }else{
-        let count = users[users.length - 1].id
-        return count++;
-    }
-   
-}
+
 
 
