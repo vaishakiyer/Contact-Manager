@@ -17,12 +17,15 @@ function registerUser(){
 
 function loginPressed(){
 
-    //validation Login
-    //then perform the below actions
    
    var allUsers = fetchAllUsers();
    let myUser =  new User(idGenerator,'vaishak','qwerty12')
 
+
+    //validation Login
+    //then perform the below actions
+
+    
    allUsers.forEach((element)=> {
 
       if (element.name == myUser.name){
