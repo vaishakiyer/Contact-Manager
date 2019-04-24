@@ -51,19 +51,7 @@ function toggleStatus(user){
    
     user.disabled = !user.disabled
 
-    renderData()
+    renderData();   
     
 }
 renderData();
-
-
-
-if(user.disabled){
-    div.className="card-body bg-secondary";
-    button.className="btn btn-secondary float-right"; 
-    user.disabled=true;
-}else{
-    div.className="card-body bg-success";
-    button.className="btn btn-primary float-right"; 
-    user.disabled=false;
-}}
