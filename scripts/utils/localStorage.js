@@ -43,7 +43,7 @@ function saveCurrentUser(key,value){
 function fetchAllUsers(){
    
     var users = JSON.parse(localStorage.getItem('users'));
-    return users
+    return users;
 
 }
 
