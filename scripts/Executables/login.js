@@ -1,25 +1,38 @@
 
 //identify all the elements
 
+
+var userEmailId =document.querySelector('#userEmailId');
+var userPassword = document.querySelector('#userPasword');
+var userLoginButton = document.querySelector('#userLoginButton');
 var users = [];
 
-users = [new User(1,'vaishak','qwerty12'),new User(2,'naveen','helloworld!'),new User(3,'mohan','checked')]
+//users = [new User(1,'vaishak','qwerty12'),new User(2,'naveen','helloworld!'),new User(3,'mohan','checked')]
 
 function generateElements(){
 
 }
 
-function registerUser(){
 
-    let myUser =  new User(idGenerator,'vaishak','qwerty12')
-    appendDataToLocalStorageKey('users',myUser,false) 
-}
 
-function loginPressed(){
+
+
+userLoginButton.onclick = function loginPressed(){
 
    
    var allUsers = fetchAllUsers();
-   let myUser =  new User(idGenerator,'vaishak','qwerty12')
+   let myUser;
+   console.log(allUsers);
+   allUsers.forEach((element)=>{
+       //console.log(element.emailId,userEmailId.value);
+       //if(element.emailId===userEmailId.value && element.password===userPassword.value){
+         //  myUser=element;
+       //}
+       //else {
+         //  alert("entered user id or password is wrong")
+       //}
+   })
+ 
 
 
     //validation Login
@@ -29,7 +42,7 @@ function loginPressed(){
    allUsers.forEach((element)=> {
 
       if (element.name == myUser.name){
-          //login
+          
           saveCurrentUser('current',myUser)
       }else{
           alert('user not found!. Please check your credentials.')
